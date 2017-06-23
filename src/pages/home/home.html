@@ -28,7 +28,10 @@
             You can subscribe to variables by calling <code>particle.pollVariable</code>.
           </p>
           <p>
-            The device variable "var1" automatically polls, and the current value is {{var1}}
+            The device variable "var1" automatically polls, and the current value is {{red}}
+          </p>
+          <p *ngIf="red > 200">
+            This is red
           </p>
       </div>
       <div>
@@ -48,3 +51,4 @@
       </div>
   </div>
 </ion-content>
+ <code>particle.subscribe</code>
