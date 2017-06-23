@@ -8,6 +8,8 @@ import { ParticleProvider } from '../../providers/particle/particle';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  public var2: any;
+  public green: any;
   public var1: any;
   public red: any;
   private subscription: any = null;
@@ -16,7 +18,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.login()
+    this.login();
   }
 
   cancelSubscription() {
@@ -35,8 +37,16 @@ export class HomePage {
             (error) => { console.log("Error reading var1"); },
             () => { console.log("Stopped polling var1"); }
         );
+ 
+  }        if (this.particle.device) {
+        this.cancelSubscription();
+        this.particle.pollVariable("green").subscribe(
+            (value) => { this.green = value; },
+            (error) => { console.log("Error reading var2"); },
+            () => { console.log("Stopped polling var2"); }
+        );
     }
-  }
+    }
 
   login() {
     this.navCtrl.push( LoginPage );

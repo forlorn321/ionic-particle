@@ -30,8 +30,13 @@
           <p>
             The device variable "var1" automatically polls, and the current value is {{red}}
           </p>
-          <p *ngIf="red > 200">
+          <p *ngIf="red > 175">
             This is red
+            <p>
+            The device variable "var2" automatically polls, and the current value is {{green}}
+          </p>
+          <p *ngIf="green > 175">
+            This is green
           </p>
       </div>
       <div>
